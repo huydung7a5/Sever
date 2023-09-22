@@ -16,6 +16,7 @@ const bida = new Schema({
     image3: { type: String },
     iddate: { type: String, trim: true, }
 },
+// v__
     {
         timestamps: true,
         versionKey: false, // Here You have to add.
