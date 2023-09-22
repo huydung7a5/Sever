@@ -8,12 +8,12 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 require('./models/bida');
 require('./models/date');
-
+require('./models/image');
 
 var indexRouter = require('./routes/index');
 var bidarouter = require('./routes/bida');
 var daterouter  = require("./routes/date");
-
+var imagerouter = require('./routes/image');
 
 var app = express();
 
@@ -26,8 +26,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
 //connect data
 mongoose.connect('mongodb+srv://dungnhps19523:312337@cluster0.fzsrafp.mongodb.net/MyFPT?retryWrites=true&w=majority', {
   useNewUrlParser: true,
@@ -39,7 +37,7 @@ mongoose.connect('mongodb+srv://dungnhps19523:312337@cluster0.fzsrafp.mongodb.ne
 app.use('/', indexRouter);
 app.use('/bida', bidarouter);
 app.use('/date', daterouter)
-
+app.use('/image', imagerouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
