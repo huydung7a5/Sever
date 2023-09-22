@@ -47,9 +47,8 @@ router.post('/edit', async function (req, res, next) {
 });
 router.post('/add', async function (req, res, next) {
     try {
-        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, imagePath } = req.body;
-        // tao model
-        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, imagePath };
+        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image1, image2, image3 } = req.body;
+        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image1, image2, image3  };
         await modelbida.create(newInsert);
 
         res.json({ status: 1, message: ' thêm thành công' });
@@ -76,8 +75,5 @@ router.get('/detail/date', async (req, res) => {
         res.status(500).json({ error: 'Lỗi server' });
     }
 });
-router.get()
-
-
 
 module.exports = router;
