@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var modelbida = require('../models/bida');
-
     
 // lấy thông tin người dùng theo id
 router.get('/', async function (req, res, next) {
@@ -33,10 +32,9 @@ router.post('/edit', async function (req, res, next) {
             item.Second1 = Second1 ? Second1 : item.Second1;
             item.Second2 = Second2 ? Second2 : item.ScoSecond2re2;
             item.raceto = raceto ? raceto : item.raceto;
-            item.image1 = image1 ? image1 : item.image1;
-            item.image2 = image2 ? image2 : item.image2;
-            item.image3 = image2 ? image3 : item.image3;
-
+            // item.image1 = image1 ? image1 : item.image1;
+            // item.image2 = image2 ? image2 : item.image2;
+            // item.image3 = image2 ? image3 : item.image3;
             item.title = title ? title : item.title;
             await item.save();
             res.json({ status: 1, message: "Sửa trận đấu thành công" });
@@ -47,8 +45,9 @@ router.post('/edit', async function (req, res, next) {
 });
 router.post('/add', async function (req, res, next) {
     try {
-        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image1, image2, image3 } = req.body;
-        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image1, image2, image3  };
+        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate } = req.body;
+        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate };
+        
         await modelbida.create(newInsert);
 
         res.json({ status: 1, message: ' thêm thành công' });

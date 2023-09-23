@@ -11,9 +11,6 @@ const bida = new Schema({
     Second1: { type: Number },
     raceto: { type: Number },
     title: { type: String },
-    image1: { type: String },
-    image2: { type: String },
-    image3: { type: String },
     iddate: { type: String, trim: true, }
 },
     {

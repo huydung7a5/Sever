@@ -5,6 +5,7 @@ var modelimage = require('../models/image');
 const cloudinary = require('../configs/cloundinary');
 const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const app = require('../app');
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     folder: 'bida',
@@ -17,19 +18,13 @@ const upload = multer({
 });
 router.post('/upload', upload.fields ([{ name: 'img', maxCount: 3 }]), async (req, res) => {
     try {
-        const { url1, url2, url3 } = req.body;
         // tao model
-        const newInsert = { url1, url2, url3 };
-        const files = req.files['img'][0];
-        const files1 = req.files['img'][1];
-        const files2 = req.files['img'][2];
-        if (files && files1 && files2) {
-            newInsert.url1 = files.img[0];
-            newInsert.url2 = files1.img[1];
-            newInsert.url3 = files2.img[2];
-        }
-        await modelbida.create(newInsert);
-        res.send("ảnh 1" + files + " ảnh 2" + files1 + "ảnh 3" + files2);
+        const url1 = req.files['img'][0];
+        const url2 = req.files['img'][1];
+        const url3 = req.files['img'][2];
+        const newInsert = { url1: url1.path, url2: url2.path, url3: url3.path };
+        await modelimage.create(newInsert);
+        res.json({ status: 1, message: ' thêm thành công' });
     } catch (error) {
         res.status(500).json({ error: 'Lỗi server' });
     }
