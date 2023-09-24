@@ -5,7 +5,6 @@ var multer = require('multer');
 // // thêm ảnh
 const cloudinary = require('../configs/cloundinary');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const app = require('../app');
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     folder: 'bida',
@@ -25,6 +24,7 @@ router.post('/upload', upload.fields ([{ name: 'image', maxCount: 3 }]), async (
         const newInsert = { url1: image.path, url2: image1.path, url3: image2.path };
         await modelimage.create(newInsert);
         res.json({ status: 1, message: ' thêm thành công' });
+       
     } catch (error) {
         res.status(500).json({ error: 'Lỗi server' });
     }

@@ -45,8 +45,8 @@ router.post('/edit', async function (req, res, next) {
 });
 router.post('/add', async function (req, res, next) {
     try {
-        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate } = req.body;
-        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate };
+        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image1, image2, image3 } = req.body;
+        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image1, image2, image3 };
         
         await modelbida.create(newInsert);
 
