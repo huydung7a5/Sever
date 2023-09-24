@@ -16,7 +16,7 @@ const storage = new CloudinaryStorage({
 const upload = multer({
      storage: storage,
 });
-router.post('/upload', upload.array ([{ name: 'uri', maxCount: 3 }]), async (req, res) => {
+router.post('/upload', upload.fields ([{ name: 'uri', maxCount: 3 }]), async (req, res) => {
     try {
         // tao model
         const url1 = req.files['uri'][0];
