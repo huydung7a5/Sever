@@ -16,11 +16,13 @@ const storage = new CloudinaryStorage({
 const upload = multer({
      storage: storage,
 });
-router.post('/upload', upload.fields ([{ name: 'uri', maxCount: 3 }]), async (req, res) => {
+router.post('/upload', upload.array ([{ name: 'uri', maxCount: 3 }]), async (req, res) => {
     try {
         // tao model
         const url1 = req.files['uri'][0];
-        const newInsert = { url1: url1.path };
+        const url2 = req.files['uri'][1];
+        const url3 = req.files['uri'][2];
+        const newInsert = { url1: url1.path, url2: url2.path, url3: url3.path };
         await modelimage.create(newInsert);
         res.json({ status: 1, message: ' thêm thành công' });
     } catch (error) {
