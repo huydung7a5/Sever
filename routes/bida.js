@@ -1,8 +1,21 @@
 var express = require('express');
 var router = express.Router();
 var modelbida = require('../models/bida');
-    
-// lấy thông tin người dùng theo id
+
+var multer = require('multer');
+// // thêm ảnh
+const cloudinary = require('../configs/cloundinary');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    folder: 'bida',
+    allowedFormats: ["jpg", "png", "jpeg"],
+    transformation: [{ width: 500, height: 500, crop: "limit" }],
+
+});
+const upload = multer({
+    storage: storage,
+});
 router.get('/', async function (req, res, next) {
 
     var data = await modelbida.find();
@@ -43,11 +56,13 @@ router.post('/edit', async function (req, res, next) {
         res.json({ status: 0, message: "Sửa trận đấu thất bại" });
     }
 });
-router.post('/add', async function (req, res, next) {
+router.post('/add', upload.fields([{ name: 'image', maxCount: 3 }]), async (req, res) => {
     try {
-        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image1, image2, image3 } = req.body;
-        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image1, image2, image3 };
-        
+        const image = req.files['image'][0];
+        const image1 = req.files['image'][1];
+        const image2 = req.files['image'][2];
+        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate } = req.body;
+        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image: image.path, image1: image1.path, image2: image2.path };
         await modelbida.create(newInsert);
 
         res.json({ status: 1, message: ' thêm thành công' });
