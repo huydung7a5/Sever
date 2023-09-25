@@ -61,8 +61,8 @@ router.post('/add', upload.fields([{ name: 'image', maxCount: 3 }]), async (req,
         const image = req.files['image'][0];
         const image1 = req.files['image'][1];
         const image2 = req.files['image'][2];
-        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate } = req.body;
-        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image: image.path, image1: image1.path, image2: image2.path };
+        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber } = req.body;
+        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, image: image.path, image1: image1.path, image2: image2.path };
         await modelbida.create(newInsert);
 
         res.json({ status: 1, message: ' thêm thành công' });
