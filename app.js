@@ -17,7 +17,7 @@ var imagerouter = require('./routes/image');
 
 var app = express();
 
-// view engine setup
+// view engine setupa
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //connect data
-mongoose.connect('mongodb://admin:312337@ac-eyff4zj-shard-00-00.6imd0f4.mongodb.net:27017,ac-eyff4zj-shard-00-01.6imd0f4.mongodb.net:27017,ac-eyff4zj-shard-00-02.6imd0f4.mongodb.net:27017/?replicaSet=atlas-vjzt66-shard-0&ssl=true&authSource=admin', {
+mongoose.connect('mongodb+srv://admin:312337@ac-eyff4zj-shard-00-00.6imd0f4.mongodb.net/?replicaSet=atlas-vjzt66-shard-0&ssl=true&authSource=admin', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
