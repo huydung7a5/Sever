@@ -56,6 +56,7 @@ router.post('/edit', async function (req, res, next) {
         res.json({ status: 0, message: "Sửa trận đấu thất bại" });
     }
 });
+<<<<<<< HEAD
 router.post('/add', upload.fields([
     { name: 'image', maxCount: 1 },
     { name: 'image1', maxCount: 1 },
@@ -114,6 +115,16 @@ router.post('/add', upload.fields([
             res.json({ status: 1, message: ' thêm thành công' });
             return await modelbida.create(newInsert);
         }
+=======
+router.post('/add', upload.fields([{ name: 'image', maxCount: 3 }]), async (req, res) => {
+    try {
+        const image = req.files['image'][0];
+        const image1 = req.files['image'][1];
+        const image2 = req.files['image'][2];
+        const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate } = req.body;
+        const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, image: image.path, image1: image1.path, image2: image2.path };
+        await modelbida.create(newInsert);
+>>>>>>> parent of 8d8fd75 (123)
 
     });
 router.get('/detail', async (req, res) => {
