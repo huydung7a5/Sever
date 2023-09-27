@@ -35,7 +35,6 @@ router.post('/edit', async function (req, res, next) {
 router.post('/add', async function (req, res, next) {
     try {
         const { date} = req.body;
-      // tao model
       const newInsert = {date};
       await modeldate.create(newInsert);
   
