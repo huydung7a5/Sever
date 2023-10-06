@@ -9,11 +9,13 @@ const mongoose = require('mongoose');
 require('./models/bida');
 require('./models/date');
 require('./models/image');
+require('./models/so');
 
 var indexRouter = require('./routes/index');
 var bidarouter = require('./routes/bida');
 var daterouter  = require("./routes/date");
 var imagerouter = require('./routes/image');
+var soxorouter = require('./routes/so');
 
 var app = express();
 
@@ -38,6 +40,7 @@ app.use('/', indexRouter);
 app.use('/bida', bidarouter);
 app.use('/date', daterouter)
 app.use('/image', imagerouter);
+app.use('/so', soxorouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
