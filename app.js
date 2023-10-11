@@ -30,7 +30,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon (path.join(__dirname, '/public', 'favicon.ico')));
 //connect data
 mongoose.connect('mongodb+srv://admin:312337@cluster0.6imd0f4.mongodb.net/MyFPT?retryWrites=true&w=majority', {
   useNewUrlParser: true,
