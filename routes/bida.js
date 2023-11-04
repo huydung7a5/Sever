@@ -60,47 +60,47 @@ router.post('/add', upload.fields([
     { name: "image1", maxCount: 1 },
     { name: "image2", maxCount: 1 }]), async (req, res) => {
         if (!req.files['image'] && !req.files['image1'] && !req.files['image2']) {
-            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date } = req.body;
-            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, image: "null", image1: "null", image2: "null" };
+            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem } = req.body;
+            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem, image: "null", image1: "null", image2: "null" };
             res.json({ status: 1, message: ' thêm thành công' });
             return await modelbida.create(newInsert);
         } else if (!req.files['image'] && !req.files['image1']) {
             const image2 = req.files['image2'][0];
-            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date } = req.body;
-            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, image: "null", image1: "null", image2: image2.path };
+            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem } = req.body;
+            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem, image: "null", image1: "null", image2: image2.path };
             res.json({ status: 1, message: ' thêm thành công' });
             return await modelbida.create(newInsert);
         } else if (!req.files["image1"] && !req.files["image2"]) {
             const image = req.files['image'][0];
-            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date } = req.body;
-            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, image: image.path, image1: 'null', image2: 'null' };
+            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem } = req.body;
+            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem, image: image.path, image1: 'null', image2: 'null' };
             res.json({ status: 1, message: ' thêm thành công' });
             return await modelbida.create(newInsert);
         } else if (!req.files["image"] && !req.files["image2"]) {
             const image1 = req.files['image1'][0];
-            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date } = req.body;
-            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, image: "null", image1: image1.path, image2: "null" };
+            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem } = req.body;
+            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem, image: "null", image1: image1.path, image2: "null" };
             res.json({ status: 1, message: ' thêm thành công' });
             return await modelbida.create(newInsert);
         } else if (!req.files['image']) {
             const image1 = req.files['image1'][0];
             const image2 = req.files['image2'][0];
-            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date } = req.body;
-            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, image: 'null', image1: image1.path, image2: image2.path };
+            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem } = req.body;
+            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem, image: 'null', image1: image1.path, image2: image2.path };
             res.json({ status: 1, message: ' thêm thành công' });
             return await modelbida.create(newInsert);
         } else if (!req.files['image1']) {
             const image = req.files['image'][0];
             const image2 = req.files['image2'][0];
-            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date } = req.body;
-            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, image: image.path, image1: "null", image2: image2.path };
+            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem } = req.body;
+            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem, image: image.path, image1: "null", image2: image2.path };
             res.json({ status: 1, message: ' thêm thành công' });
             return await modelbida.create(newInsert);
         } else if (!req.files['image2']) {
             const image = req.files['image'][0];
             const image1 = req.files['image1'][0];
-            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date } = req.body;
-            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, image: image.path, image1: image1.path, image2: "null" };
+            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem } = req.body;
+            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem, image: image.path, image1: image1.path, image2: "null" };
             res.json({ status: 1, message: ' thêm thành công' });
             await modelbida.create(newInsert);
         }
@@ -108,8 +108,8 @@ router.post('/add', upload.fields([
             const image = req.files['image'][0];
             const image1 = req.files['image1'][0];
             const image2 = req.files['image2'][0];
-            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date } = req.body;
-            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, image: image.path, image1: image1.path, image2: image2.path };
+            const { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem } = req.body;
+            const newInsert = { name1, name2, Score1, Score2, title, Second1, Second2, raceto, iddate, totalnumber, date, Secondthem, image: image.path, image1: image1.path, image2: image2.path };
             res.json({ status: 1, message: ' thêm thành công' });
             return await modelbida.create(newInsert);
         }

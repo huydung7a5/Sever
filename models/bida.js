@@ -13,6 +13,7 @@ const bida = new Schema({
     totalnumber: { type: Number },
     title: { type: String },
     date: { type: String },
+    Secondthem: {type: Number},
     image: { type: String },
     image1: { type: String },
     image2: { type: String },
