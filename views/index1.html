@@ -27,16 +27,17 @@
 
         header {
             width: 100%;
-            height: auto;
+            height: 60px;
             background-color: antiquewhite;
         }
 
 
         .headertitle {
+
             width: 100%;
-            height: 100%;
-            margin-top: -3.5%;
-           
+            height: auto;
+            margin-top: -2%;
+
         }
 
         .txttitle {
@@ -45,8 +46,8 @@
             font-weight: bold;
             color: Black;
             text-align: center;
-           
         }
+
         .txttitle1 {
             font-style: normal;
             font-size: 20px;
@@ -54,8 +55,9 @@
             color: Black;
             text-align: center;
             margin-top: -3%;
-           
+
         }
+
         .img {
             width: 100%;
             height: auto;
@@ -63,7 +65,7 @@
 
         .img2 {
             max-width: 60%;
-            width: 20%;
+            width: 37%;
             float: left;
             height: auto;
 
@@ -104,6 +106,9 @@
             float: right;
 
         }
+
+
+
         .hocvan2 {
             width: 100%;
             height: auto;
@@ -122,8 +127,8 @@
             text-align: center;
             background-color: antiquewhite;
             word-wrap: break-word;
-            margin-top: -3.5%;
-           
+
+
         }
 
         h4 {
@@ -152,36 +157,22 @@
             float: right;
         }
 
-        @media screen and (max-width: 700px) {
-            .swaper1 {
-                max-width: 100%;
-                padding: 10px;
-            }
-
-            .viewbentrai {
-                width: 100%;
-
-            }
-
-            .viewbenphai {
-                width: 100%;
-
-            }
-
-            .img1 {
-                max-width: 100%;
-                width: 100%;
-            }
-
-            .hocvan {
-                max-width: 100%;
-                width: 100%;
-                margin-right: 4%;
-            }
-
+        .hocvan3 {
+            width: 100%;
+            height: auto;
+            float: right;
+            justify-content: space-between;
+            flex-direction: row;
         }
 
-        @media screen and (max-width: 800px) and (min-width: 701px) {
+        .item1 {
+            width: 50%;
+            height: auto;
+            float: right;
+            margin-top: 2%;
+        }
+
+        @media screen and (max-width: 800px) {
             .swaper1 {
                 max-width: 100%;
                 padding: 10px;
@@ -206,12 +197,32 @@
                 max-width: 100%;
                 width: 100%;
                 margin-right: 4%;
+            }
+
+            .hocvan3 {
+                width: 100%;
+                height: auto;
+                float: right;
+                justify-content: space-between;
+                flex-direction: row;
+
             }
 
             .img2 {
-                max-width: 100%;
-                width: 100%;
+                max-width: 40%;
+                width: 37%;
+                float: left;
+                height: auto;
             }
+
+            .item1 {
+                width: 100%;
+                height: auto;
+                float: right;
+                margin-top: 2%;
+
+            }
+
         }
     </style>
 </head>
@@ -222,11 +233,13 @@
         <footer>
             <div class="img1">
                 <img class="img"
-                    src="https://firebasestorage.googleapis.com/v0/b/shopbanhang-f7094.appspot.com/o/SanPham%2Fadd.jpg?alt=media&token=af9978f9-6d82-4418-8984-d1c72376f3e9&_gl=1*8337by*_ga*MTYyNDkwMzg4OS4xNjk0NDgzMTE1*_ga_CW55HF8NVT*MTY5NjQ4MjM4Ny4xNS4xLjE2OTY0ODI0MDkuMzguMC4w" />
+                    src="https://firebasestorage.googleapis.com/v0/b/shopbanhang-f7094.appspot.com/o/SanPham%2Fz4849260631321_7deefd0d997322e75cd79bf6e6adcb89.jpg?alt=media&token=ec2c338f-a681-4908-8bde-11264c3d72ef&_gl=1*1a4rq2e*_ga*MTYyNDkwMzg4OS4xNjk0NDgzMTE1*_ga_CW55HF8NVT*MTY5OTEwOTU5MC4yNC4xLjE2OTkxMDk2MTQuMzYuMC4w" />
                 <header>
                     <div class="headertitle">
                         <p class="txttitle">NGUYỄN HỮU DŨNG</p>
                         <P class="txttitle1">Intern Mobile Developer</P>
+
+
                     </div>
                 </header>
                 <h2 class="txtlienhe">Thông tin liên hệ</h2>
@@ -293,13 +306,10 @@
                     <p>Thời gian thực hiện: 8/2023 - 10/2023.</p>
                     <p>Ứng dụng được khách hàng triển khai trên các thiết bị androi và tương lai có thể triển khai trên
                         IOS.
-                    </p>  <p class="xuonghang">Link github: <a
-                        href="https://github.com/huydung7a5/Carom">https://github.com/huydung7a5/Carom</a></p>
-                        <p>Video Demo App Carom:</p>
+                    </p>
+                    <p class="xuonghang">Link github: <a
+                            href="https://github.com/huydung7a5/Carom">https://github.com/huydung7a5/Carom</a></p>
 
-                    <div class="hocvan2"><img class="img2"
-                            src="https://firebasestorage.googleapis.com/v0/b/shopbanhang-f7094.appspot.com/o/SanPham%2Fqrcode_81666774_4282a42151f68fabf7e3e81703725610.png?alt=media&token=689c3cc8-daab-43ae-b239-14ac07692abe&_gl=1*16bzua0*_ga*MTYyNDkwMzg4OS4xNjk0NDgzMTE1*_ga_CW55HF8NVT*MTY5OTA4NTU4OS4yMy4xLjE2OTkwODU2MjEuMjguMC4w" />
-                    </div>
                     <h4>Ứng dụng tính toán số vietlot.</h4>
                     <P>Dự án cá nhân.</p>
                     <p>Ngôn ngữ lập trình và framework: JavaScript - ReactNative.</p>
@@ -319,6 +329,23 @@
                     <p class="xuonghang">Link github: <a
                             href="https://github.com/huydung7a5/Sever">https://github.com/huydung7a5/Sever</a>
                     </p>
+                </div>
+                <div class="hocvan3">
+                    <h2 class="txthocvan">Video Demo App</h2>
+                    <div class="item1">
+                        <div class="hocvan2"><img class="img2"
+                                src="https://firebasestorage.googleapis.com/v0/b/shopbanhang-f7094.appspot.com/o/SanPham%2Fqrcode_81666774_4282a42151f68fabf7e3e81703725610.png?alt=media&token=689c3cc8-daab-43ae-b239-14ac07692abe&_gl=1*16bzua0*_ga*MTYyNDkwMzg4OS4xNjk0NDgzMTE1*_ga_CW55HF8NVT*MTY5OTA4NTU4OS4yMy4xLjE2OTkwODU2MjEuMjguMC4w" />
+                        </div>
+                        <br>
+                        <p>Video Demo App Carom</p>
+                    </div>
+                    <div class="item1">
+                        <div class="hocvan2"><img class="img2"
+                                src="https://firebasestorage.googleapis.com/v0/b/shopbanhang-f7094.appspot.com/o/SanPham%2Fqrcode_81666774_4282a42151f68fabf7e3e81703725610.png?alt=media&token=689c3cc8-daab-43ae-b239-14ac07692abe&_gl=1*16bzua0*_ga*MTYyNDkwMzg4OS4xNjk0NDgzMTE1*_ga_CW55HF8NVT*MTY5OTA4NTU4OS4yMy4xLjE2OTkwODU2MjEuMjguMC4w" />
+                        </div>
+                        <br>
+                        <p>Video Demo App xổ số</p>
+                    </div>
                 </div>
             </div>
 
