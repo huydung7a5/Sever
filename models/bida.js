@@ -12,6 +12,7 @@ const bida = new Schema({
     raceto: { type: Number },
     totalnumber: { type: Number },
     title: { type: String },
+    date: { type: String },
     image: { type: String },
     image1: { type: String },
     image2: { type: String },
